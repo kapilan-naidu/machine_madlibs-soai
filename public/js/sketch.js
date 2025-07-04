@@ -26,6 +26,13 @@ function draw() {
   for (let i = 0; i < wordTiles.length; i++) {
     const tile = wordTiles[i];
 
+    // Set font family based on tile font property
+    if (tile.font === "serif") {
+      textFont("Georgia");
+    } else {
+      textFont("Arial");
+    }
+
     textSize(tile.sz);
     textAlign(CENTER, CENTER);
 

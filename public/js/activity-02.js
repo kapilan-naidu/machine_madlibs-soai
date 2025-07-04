@@ -1,5 +1,11 @@
 // DOM Elements
-let saveButton, keywordForm, canvasBgForm, textColorForm, textBgForm, fontSizeBtns;
+let saveButton,
+  keywordForm,
+  canvasBgForm,
+  textColorForm,
+  textBgForm,
+  fontSizeBtns,
+  fontToggle;
 
 // Initialize the app
 function init() {
@@ -10,6 +16,7 @@ function init() {
   textColorForm = document.querySelector("#form-text-fg");
   textBgForm = document.querySelector("#form-text-bg");
   fontSizeBtns = Array.from(document.querySelectorAll(".font-sizes .size"));
+  fontToggle = document.querySelector(".font-toggle");
 
   // Set up event listeners
   setupEventListeners();
@@ -30,6 +37,9 @@ function setupEventListeners() {
   fontSizeBtns.forEach((btn) => {
     btn.addEventListener("click", handleFontSizeClick);
   });
+
+  // Font toggle button
+  fontToggle.addEventListener("click", handleFontToggle);
 }
 
 // Handle keyword form submission
@@ -125,6 +135,24 @@ function handleFontSizeClick(e) {
   }
 }
 
+// Handle font toggle button click
+function handleFontToggle(e) {
+  if (activeTileIndex === null) return;
+
+  const currentTile = wordTiles[activeTileIndex];
+
+  // Toggle between serif and sans-serif
+  if (currentTile.font === "serif") {
+    currentTile.font = "sans-serif";
+    fontToggle.textContent = "Sans-serif";
+    fontToggle.classList.remove("serif");
+  } else {
+    currentTile.font = "serif";
+    fontToggle.textContent = "Serif";
+    fontToggle.classList.add("serif");
+  }
+}
+
 // Make request to Ollama for word generation
 function getWords(keyword) {
   const model = "mm_mistral";
@@ -174,6 +202,7 @@ function handleWordsData(data) {
 // Handle API errors
 function handleError(error) {
   console.error("Error generating words:", error);
+  // Could add user-facing error message here
 }
 
 // Validate hex color format
@@ -289,6 +318,7 @@ function toggleWord(e) {
       bg: "#000",
       c: "#fff",
       sz: 16,
+      font: "sans-serif", // Default font
     };
 
     wordTiles.push(newTile);
@@ -319,6 +349,15 @@ function updateEditor(tile) {
 
   const buttonIndex = sizeButtonMap[tile.sz] || 2; // Default to M
   fontSizeBtns[buttonIndex].classList.add("selected");
+
+  // Update font toggle
+  if (tile.font === "serif") {
+    fontToggle.textContent = "Serif";
+    fontToggle.classList.add("serif");
+  } else {
+    fontToggle.textContent = "Sans-serif";
+    fontToggle.classList.remove("serif");
+  }
 }
 
 // Clear editor selection
@@ -326,6 +365,8 @@ function clearEditor() {
   document.querySelector("#text-fg").value = "";
   document.querySelector("#text-bg").value = "";
   fontSizeBtns.forEach((btn) => btn.classList.remove("selected"));
+  fontToggle.textContent = "Sans-serif";
+  fontToggle.classList.remove("serif");
 }
 
 // Download canvas as image

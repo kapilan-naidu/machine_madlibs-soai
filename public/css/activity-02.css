@@ -196,6 +196,34 @@
   }
 }
 
+.font-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+
+  &.serif {
+    background: #333;
+    color: white;
+    font-family: Georgia, serif;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .activity-02 {
