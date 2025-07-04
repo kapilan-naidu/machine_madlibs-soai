@@ -1,6 +1,6 @@
 // DOM Elements
 let textDisplay, form, input, button, saveButton;
-const MAX_WORDS = 180;
+const MAX_WORDS = 200;
 
 // Initialize the app
 function init() {
