@@ -379,7 +379,7 @@ function downloadImage() {
   const now = new Date();
   const timestamp = now.toISOString().replace(/[:.]/g, "-").slice(0, 19);
 
-  saveCanvas(`visual-poetry-${timestamp}`, "png");
+  saveCanvas(`mm_visual-poetry_${timestamp}`, "png");
 }
 
 // Start the app when DOM is ready
