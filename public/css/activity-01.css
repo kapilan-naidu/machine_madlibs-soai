@@ -1,0 +1,70 @@
+/* MICRO-FICTION STYLES */
+
+.activity-01 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-display {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: calc(100% - 4rem);
+  padding-top: 1.5em;
+  margin-bottom: 2rem;
+
+  overflow-y: scroll;
+
+  font-size: 1.75rem;
+  line-height: 1.5em;
+
+  & p {
+    max-width: 800px;
+  }
+}
+
+.prompt {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  height: 3rem;
+
+  font-size: 16px;
+
+  & input {
+    height: 100%;
+    border-radius: 5rem;
+    border: solid thin lightgray;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    transition: border 250ms;
+
+    &:focus {
+      border: solid thin gray;
+    }
+  }
+  & button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+    background: lightgray;
+    font-size: 20px;
+
+    transition: all 250ms;
+    cursor: pointer;
+
+    &:hover {
+      background: black;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
