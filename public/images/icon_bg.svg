@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 200 200">
+  <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
+  <defs>
+    <style>
+      .st0, .st1 {
+        fill: none;
+      }
+
+      .st1 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+
+      .st2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <path d="M185,15v170H15V15h170M200,0H0v200h200V0h0Z"/>
+  <g class="st2">
+    <g>
+      <line class="st1" x1="-41.4" y1="100" x2="100" y2="-41.4"/>
+      <line class="st1" x1="-15.7" y1="100" x2="100" y2="-15.7"/>
+      <line class="st1" x1="10" y1="100" x2="100" y2="10"/>
+      <line class="st1" x1="35.7" y1="100" x2="100" y2="35.7"/>
+      <line class="st1" x1="61.4" y1="100" x2="100" y2="61.4"/>
+      <line class="st1" x1="87.1" y1="100" x2="100" y2="87.1"/>
+      <line class="st1" x1="112.9" y1="100" x2="100" y2="112.9"/>
+      <line class="st1" x1="138.6" y1="100" x2="100" y2="138.6"/>
+      <line class="st1" x1="164.3" y1="100" x2="100" y2="164.3"/>
+      <line class="st1" x1="190" y1="100" x2="100" y2="190"/>
+      <line class="st1" x1="215.7" y1="100" x2="100" y2="215.7"/>
+      <line class="st1" x1="241.4" y1="100" x2="100" y2="241.4"/>
+    </g>
+  </g>
+</svg>

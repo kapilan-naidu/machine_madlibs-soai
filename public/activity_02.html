@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Madlibs – SOAI '25' | Activity 02 – Visual Poetry</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/activity-02.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Machine Madlibs</h1>
+      <nav>
+        <a href="activity_01.html">Activity 01</a>
+        <a href="activity_02.html" class="active">Activity 02</a>
+      </nav>
+      <button class="save-btn">↓ Download Image</button>
+    </header>
+    <main>
+      <section class="activity-02">
+        <div class="preview"></div>
+        <div class="controls">
+          <div class="word-palette">
+            <h3>Word Palette + Editor</h3>
+            <form id="form-keywords">
+              <input
+                type="text"
+                name="keyword"
+                id="input-keyword"
+                placeholder="Leave blank for filler"
+              />
+              <button type="submit">Generate Words</button>
+            </form>
+            <div class="words"></div>
+          </div>
+          <div class="editor">
+            <form id="form-canvas-bg">
+              <img src="images/icon_bg.svg" />
+              <input
+                type="text"
+                name="canvas-bg"
+                id="canvas-bg"
+                placeholder="Canvas background"
+              />
+              <button type="submit">Apply</button>
+            </form>
+            <form id="form-text-fg">
+              <img src="images/icon_text.svg" />
+              <input type="text" name="text-fg" id="text-fg" placeholder="Text color" />
+              <button type="submit">Apply</button>
+            </form>
+            <form id="form-text-bg">
+              <img src="images/icon_tile.svg" />
+              <input
+                type="text"
+                name="text-bg"
+                id="text-bg"
+                placeholder="Tile background"
+              />
+              <button type="submit">Apply</button>
+            </form>
+            <div class="font-sizes">
+              <div class="size">XS</div>
+              <div class="size">S</div>
+              <div class="size">M</div>
+              <div class="size">L</div>
+              <div class="size">XL</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/p5.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/activity-02.js"></script>
+    <script src="js/sketch.js"></script>
+  </body>
+</html>
