@@ -155,7 +155,7 @@ function handleFontToggle(e) {
 
 // Make request to Ollama for word generation
 function getWords(keyword) {
-  const model = "mm_mistral";
+  const model = "mm_poet";
   const url = API;
 
   const input = keyword || "mm_filler_words";
