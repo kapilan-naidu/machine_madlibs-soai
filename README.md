@@ -1,4 +1,4 @@
-# Machine Madlibs
+# 🤖 Machine Madlibs
 
 > 'Machine Madlibs' workshop activities designed for SOAI 2025
 
@@ -25,41 +25,42 @@ An interactive web application that combines AI-powered text generation with vis
 - **Ollama** (for running AI models locally)
 - **Basic terminal/command line** knowledge
 
+---
+
 ## Setup Instructions
 
 ### 1. Install Ollama
+You can download the Ollama installer for all platforms from [ollama.ai](https://ollama.ai/download). For macOS and Linux users, you can also install Ollama via the terminal if you prefer.
 
 **macOS:**
 ```bash
 brew install ollama
 ```
+Requires [Homebrew](https://brew.sh).
 
 **Linux:**
 ```bash
 curl -fsSL https://ollama.ai/install.sh | sh
 ```
 
-**Windows:**
+**Windows:**  
 Download from [ollama.ai](https://ollama.ai/download) and run the installer.
 
 ### 2. Start Ollama Service
-
 ```bash
 ollama serve
 ```
-
 Keep this terminal window open - Ollama needs to run in the background.
 
 ### 3. Download the Project
-
+Open a new terminal window to clone the repository.
 ```bash
 git clone https://github.com/kapilan-naidu/machine_madlibs-soai.git
 cd machine_madlibs-soai
 ```
 
 ### 4. Create AI Models
-
-You'll need to create three custom models using the provided modelfiles. In a new terminal window:
+You'll need to create three custom models using the provided modelfiles. In a _new_ terminal window:
 
 **Model 1: Story Writer (mm_writer)**
 ```bash
@@ -75,6 +76,7 @@ ollama create mm_poet -f models/mm_poet_modelfile
 ```bash
 ollama create mm_color -f models/mm_color_modelfile
 ```
+If you would like to modify the ```SYSYTEM``` prompt, make changes to the modelfile **before** running the ```create``` command.  
 
 ### 5. Verify Models Are Installed
 
@@ -99,14 +101,18 @@ Then start a web server:
 # Python 3
 python -m http.server 8000
 
+# Python 3 on macOS
+python3 -m http.server 8000
+
 # Python 2
 python -m SimpleHTTPServer 8000
 ```
 
 **Option B: Using Node.js**
 ```bash
-npx http-server -p 8000
+npx http-server -c -1 -p 8000
 ```
+Requires [NodeJS](https://nodejs.org/en).
 
 **Option C: Using PHP**
 ```bash
@@ -139,7 +145,7 @@ The API endpoint is configured in `public/js/config.js`:
 const API = "http://localhost:11434/api/generate";
 ```
 
-If you're running Ollama on a different port or server, update this file accordingly.
+If you're running Ollama on a different port or server, update this file accordingly. In most cases, you can leave this unchanged.
 
 ## File Structure
 
@@ -178,6 +184,10 @@ machine_madlibs-soai/
 - Re-run the model creation commands
 - Check that modelfiles exist in the `models/` directory
 - Ensure you're in the correct directory when running `ollama create`
+- If you need to remove a previously created model, run:
+- ```bash
+  ollama rm [existing-model-name]
+  ```
 
 **Problem: Blank page or JavaScript errors**
 - Make sure you're serving the site through a web server from the `public/` directory
@@ -186,8 +196,14 @@ machine_madlibs-soai/
 
 **Problem: Canvas not working**
 - Visual poetry requires p5.js to load properly
-- Check your internet connection (p5.js loads from CDN)
-- Try refreshing the page
+- p5js is already included as a dependency in this project, _do not_ remove it
+- Try refreshing the page or clearning your browser's cache
+
+**Problem: Slow Loading or Delayed Response**
+- Ollama will dynamically pull the required models on first use or when creating a new one using a modelfile
+- If you try to make a request or create a new model without the internet, the process will fail
+- Each new session of ```ollama run``` will take some time to "warm-up" the model
+- Responses will become much quicker after the initial loading process
 
 ## Contributing
 
